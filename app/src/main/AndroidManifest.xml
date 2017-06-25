@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.willmo.saudebucal"
+    android:versionCode="6"
+    android:versionName="@string/app_version">
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="16" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".reminderApi.AppSingleton"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".reminderApi.BootCompletedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".reminderApi.ScheduleReminder"></receiver>
+
+        <service android:name=".reminderApi.ReminderService" />
+
+        <activity
+            android:name=".activities.ReminderActivity"
+            android:label="@string/title_activity_reminder" />
+        <activity android:name=".activities.ShowVideoActivity" />
+        <activity
+            android:name=".activities.HistoryActivity"
+            android:label="@string/title_activity_history" />
+        <activity
+            android:name=".activities.ContactActivity"
+            android:label="@string/title_activity_contact" />
+        <activity
+            android:name=".activities.AboutActivity"
+            android:label="@string/title_activity_about"></activity>
+    </application>
+
+</manifest>

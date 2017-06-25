@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_about"
+        android:title="@string/title_activity_about" />
+    <item
+        android:id="@+id/item_history"
+        android:title="@string/title_activity_history" />
+    <!--android:showAsAction="ifRoom"-->
+    <!--android:title="@string/help" />-->
+    <!--android:icon="@drawable/ic_new_game"-->
+    <!--<item android:id="@+id/help"-->
+    <!--android:icon="@drawable/ic_help"-->
+</menu>
